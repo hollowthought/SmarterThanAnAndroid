@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="illek.general.smart"
+    android:versionCode="1"
+    android:versionName="1.0"
+    android:debuggable="true" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name=".SmarterThanAnAndroidActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- The following three lines are required to used iSpeech's Android SDK. -->
+		<activity android:name="org.ispeech.iSpeechFramework" android:theme="@android:style/Theme.Translucent" />
+		<meta-data android:name="ispeech_api_key" android:value="c1fb0a82f380ae24bd9e3e20fada0b88" />
+		<meta-data android:name="debug" android:value="false" />
+    </application>
+    
+    	<!-- These are the minimum permissions required to use iSpeech's Android SDK.  -->
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
+	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"></uses-permission>
+	<uses-permission android:name="android.permission.SEND_SMS"></uses-permission>
+	<uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+
+</manifest>
